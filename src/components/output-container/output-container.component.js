@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import OutputNumber from '../output-number/output-number.component';
+
 import './output-container.styles.scss';
 
 const OutputContainer = ({ outputNumbers }) => {
@@ -10,7 +12,7 @@ const OutputContainer = ({ outputNumbers }) => {
       {Object.keys(outputNumbers)
         .map(key => outputNumbers[key])
         .map((num, i) => (
-          <div key={i}>{num}</div>
+          <OutputNumber key={i} number={num} />
         ))}
     </div>
   );

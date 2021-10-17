@@ -1,8 +1,8 @@
 import './title.styles.scss';
 
 const Title = () => (
-  <div className='title'>
-    <h1>LOTTERY COMBINATION</h1>
+  <div className='title-container'>
+    <h1 className='title'>LOTTERY COMBINATION</h1>
   </div>
 );
 

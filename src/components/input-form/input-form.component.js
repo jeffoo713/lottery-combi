@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
+import CustomButton from '../custom-button/custom-button.component';
+
 import { drawNumbersWithExceptions } from '../../redux/numbers/numbers.utils';
 import { drawNumbers } from '../../redux/numbers/numbers.actions';
+
+import './input-form.styles.scss';
 
 const InputForm = ({ drawNumbers }) => {
   const INITIAL_VALUE = {
@@ -27,57 +31,58 @@ const InputForm = ({ drawNumbers }) => {
     const numbersToDraw = drawNumbersWithExceptions(numObj);
     console.log(numbersToDraw);
     drawNumbers(numbersToDraw);
-
-    setNumObj({ ...INITIAL_VALUE });
   };
 
   return (
     <form className='input-form'>
-      <input
-        className='input'
-        type='number'
-        name='num1'
-        value={numObj.num1}
-        onChange={handleChange}
-      />
-      <input
-        className='input'
-        type='number'
-        name='num2'
-        value={numObj.num2}
-        onChange={handleChange}
-      />
-      <input
-        className='input'
-        type='number'
-        name='num3'
-        value={numObj.num3}
-        onChange={handleChange}
-      />
-      <input
-        className='input'
-        type='number'
-        name='num4'
-        value={numObj.num4}
-        onChange={handleChange}
-      />
-      <input
-        className='input'
-        type='number'
-        name='num5'
-        value={numObj.num5}
-        onChange={handleChange}
-      />
-      <input
-        className='input'
-        type='number'
-        name='num6'
-        value={numObj.num6}
-        onChange={handleChange}
-      />
-      <button type='button' onClick={handleSubmit}>
-        show me the numbers
-      </button>
+      <div className='input-block'>
+        <input
+          className='input'
+          type='number'
+          name='num1'
+          value={numObj.num1}
+          onChange={handleChange}
+        />
+
+        <input
+          className='input'
+          type='number'
+          name='num2'
+          value={numObj.num2}
+          onChange={handleChange}
+        />
+        <input
+          className='input'
+          type='number'
+          name='num3'
+          value={numObj.num3}
+          onChange={handleChange}
+        />
+        <input
+          className='input'
+          type='number'
+          name='num4'
+          value={numObj.num4}
+          onChange={handleChange}
+        />
+        <input
+          className='input'
+          type='number'
+          name='num5'
+          value={numObj.num5}
+          onChange={handleChange}
+        />
+        <input
+          className='input'
+          type='number'
+          name='num6'
+          value={numObj.num6}
+          onChange={handleChange}
+        />
+      </div>
+      <CustomButton type='button' onClick={handleSubmit}>
+        GO
+      </CustomButton>
     </form>
   );
 };

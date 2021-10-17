@@ -1,4 +1,9 @@
-.title {
-  background-color: darkgoldenrod;
+.title-container {
+  background-color: goldenrod;
   text-align: center;
+  height: 75px;
+
+  .title {
+    padding-top: 18px;
+  }
 }
