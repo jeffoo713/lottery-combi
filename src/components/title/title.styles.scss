@@ -1,19 +1,22 @@
 .title-container {
   background-color: goldenrod;
   text-align: center;
-  height: 75px;
-
-  .title {
-    padding-top: 18px;
-  }
+  padding: 10px 0;
 }
 
 @media screen and (max-width: 450px) {
   .title-container {
     .title {
-      padding-top: unset;
-      width: 350px;
+      width: 80%;
       margin: 20px auto;
+      font-size: 40px;
+    }
+  }
+}
+@media screen and (max-width: 350px) {
+  .title-container {
+    .title {
+      font-size: 35px;
     }
   }
 }
