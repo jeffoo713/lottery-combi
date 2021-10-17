@@ -7,3 +7,13 @@
     padding-top: 18px;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .title-container {
+    .title {
+      padding-top: unset;
+      width: 350px;
+      margin: 20px auto;
+    }
+  }
+}
