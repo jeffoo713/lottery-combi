@@ -12,7 +12,7 @@ const App = () => (
   <div className='main'>
     <Title />
     <InputContainer>
-      <h2>Except Theses Numbers</h2>
+      <h2>Except These Numbers</h2>
       <InputForm />
     </InputContainer>
     <OutputContainer>

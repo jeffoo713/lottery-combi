@@ -1,23 +1,34 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
-const INITIAL_VALUE = {
-  num1: '',
-  num2: '',
-  num3: '',
-  num4: '',
-  num5: '',
-  num6: '',
-};
+import { drawNumbersWithExceptions } from '../../redux/numbers/numbers.utils';
+import { drawNumbers } from '../../redux/numbers/numbers.actions';
 
-const InputForm = () => {
+const InputForm = ({ drawNumbers }) => {
+  const INITIAL_VALUE = {
+    num1: '',
+    num2: '',
+    num3: '',
+    num4: '',
+    num5: '',
+    num6: '',
+  };
   const [numObj, setNumObj] = useState(INITIAL_VALUE);
 
   const handleChange = event => {
-    event.preventDefault();
-
     const { name, value } = event.target;
     setNumObj({ ...numObj, [name]: value });
     console.log(numObj);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    const numbersToDraw = drawNumbersWithExceptions(numObj);
+    console.log(numbersToDraw);
+    drawNumbers(numbersToDraw);
+
+    setNumObj({ ...INITIAL_VALUE });
   };
 
   return (
@@ -64,9 +75,15 @@ const InputForm = () => {
         value={numObj.num6}
         onChange={handleChange}
       />
-      <input type='submit' />
+      <button type='button' onClick={handleSubmit}>
+        show me the numbers
+      </button>
     </form>
   );
 };
 
-export default InputForm;
+const mapDispatchToProps = dispatch => ({
+  drawNumbers: numbersToDraw => dispatch(drawNumbers(numbersToDraw)),
+});
+
+export default connect(null, mapDispatchToProps)(InputForm);
