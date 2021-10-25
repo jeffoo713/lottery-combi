@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/lottery-combi/static/css/main.fb8d2407.chunk.css",
+    "main.js": "/lottery-combi/static/js/main.9202b646.chunk.js",
+    "main.js.map": "/lottery-combi/static/js/main.9202b646.chunk.js.map",
+    "runtime-main.js": "/lottery-combi/static/js/runtime-main.8dcd2368.js",
+    "runtime-main.js.map": "/lottery-combi/static/js/runtime-main.8dcd2368.js.map",
+    "static/js/2.67f6410d.chunk.js": "/lottery-combi/static/js/2.67f6410d.chunk.js",
+    "static/js/2.67f6410d.chunk.js.map": "/lottery-combi/static/js/2.67f6410d.chunk.js.map",
+    "static/js/3.d808cbd9.chunk.js": "/lottery-combi/static/js/3.d808cbd9.chunk.js",
+    "static/js/3.d808cbd9.chunk.js.map": "/lottery-combi/static/js/3.d808cbd9.chunk.js.map",
+    "index.html": "/lottery-combi/index.html",
+    "static/css/main.fb8d2407.chunk.css.map": "/lottery-combi/static/css/main.fb8d2407.chunk.css.map",
+    "static/js/2.67f6410d.chunk.js.LICENSE.txt": "/lottery-combi/static/js/2.67f6410d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8dcd2368.js",
+    "static/js/2.67f6410d.chunk.js",
+    "static/css/main.fb8d2407.chunk.css",
+    "static/js/main.9202b646.chunk.js"
+  ]
+}
