@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Title from './components/title/title.component';
 import InputContainer from './components/input-container/input-container.component';
 import OutputContainer from './components/output-container/output-container.component';

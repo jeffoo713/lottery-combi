@@ -5,7 +5,11 @@ import OutputNumber from '../output-number/output-number.component';
 
 import './output-container.styles.scss';
 
-const OutputContainer = ({ outputNumbers }) => {
+interface Props {
+  outputNumbers: any; // outputNumbers: any will be fixed
+}
+
+const OutputContainer: React.FC<Props> = ({ outputNumbers }) => {
   console.log(outputNumbers);
   return (
     <div className='output-container'>
@@ -18,6 +22,9 @@ const OutputContainer = ({ outputNumbers }) => {
   );
 };
 
-const mapStateToProps = state => ({ outputNumbers: state.numbers.output });
+const mapStateToProps = (state: any) => ({
+  // state: any will be fixed
+  outputNumbers: state.numbers.output,
+});
 
 export default connect(mapStateToProps)(OutputContainer);

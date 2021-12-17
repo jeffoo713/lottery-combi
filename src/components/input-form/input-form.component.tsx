@@ -8,28 +8,31 @@ import { drawNumbers } from '../../redux/numbers/numbers.actions';
 
 import './input-form.styles.scss';
 
-const InputForm = ({ drawNumbers }) => {
-  const INITIAL_VALUE = {
-    num1: '',
-    num2: '',
-    num3: '',
-    num4: '',
-    num5: '',
-    num6: '',
-  };
-  const [numObj, setNumObj] = useState(INITIAL_VALUE);
+interface Props {
+  drawNumbers: Function;
+}
 
-  const handleChange = event => {
-    const { name, value } = event.target;
+const INITIAL_NUMBERS = {
+  num1: '',
+  num2: '',
+  num3: '',
+  num4: '',
+  num5: '',
+  num6: '',
+};
+
+const InputForm: React.FC<Props> = ({ drawNumbers }) => {
+  const [numObj, setNumObj] = useState(INITIAL_NUMBERS);
+
+  const handleChange = (event: React.ChangeEvent<any>) => {
+    const { name, value } = event.target as HTMLTextAreaElement;
     setNumObj({ ...numObj, [name]: value });
-    console.log(numObj);
   };
 
-  const handleSubmit = event => {
+  const handleSubmit = (event: React.ChangeEvent<any>) => {
     event.preventDefault();
 
     const numbersToDraw = drawNumbersWithExceptions(numObj);
-    console.log(numbersToDraw);
     drawNumbers(numbersToDraw);
   };
 
@@ -87,8 +90,8 @@ const InputForm = ({ drawNumbers }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
-  drawNumbers: numbersToDraw => dispatch(drawNumbers(numbersToDraw)),
+const mapDispatchToProps = (dispatch: Function) => ({
+  drawNumbers: (numbersToDraw: object) => dispatch(drawNumbers(numbersToDraw)),
 });
 
 export default connect(null, mapDispatchToProps)(InputForm);
